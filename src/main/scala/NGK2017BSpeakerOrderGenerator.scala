@@ -32,7 +32,7 @@ object NGK2017BSpeakerOrderGenerator {
     @tailrec
     def generateGroups(): Seq[Group] = {
       val generated = random.shuffle(speakers)
-        .grouped(5).toList
+        .grouped(speakerPerGroup).toList
         .zipWithIndex
         .map { case (group, index) => Group(group, index + 1) }
 
